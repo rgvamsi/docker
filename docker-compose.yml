@@ -8,6 +8,12 @@ services:
     ports:
       - 3000:3000
 
+  frontend-tests:
+    image: sha256:378ea4419030038f47db96c435afe425be6108c68c12d9a5723743415049c5ae 
+    volumes:
+      - ./frontend:/app
+    command: npm test
+
   backend: 
     depends_on: 
       - db
